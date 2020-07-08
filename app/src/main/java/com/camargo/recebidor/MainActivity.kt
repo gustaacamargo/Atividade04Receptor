@@ -23,11 +23,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             else if (intent.type?.startsWith("image/") == true) {
-                val sharedText = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
-                if (sharedText != null) {
-                    Toast.makeText(this, sharedText.toString(), Toast.LENGTH_SHORT).show()
-                    imageView.setImageURI(sharedText)
+                (intent.getParcelableExtra<Parcelable>(Intent.EXTRA_STREAM) as? Uri)?.let {
+                    // 4
+                    Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
+                    message_received.text = it.toString()
+
+                    imageView.setImageURI(it)
                 }
+
             }
         }
     }

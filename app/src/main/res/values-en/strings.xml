@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Receiver</string>
     <string name="placeholder">Your message from another app will appear here</string>
-    <string name="todo" translatable="false">TODO</string>
 </resources>
